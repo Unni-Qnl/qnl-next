@@ -4,6 +4,7 @@ import "./globals.css";
 import QueryProvider from "@/providers/QueryProvider";
 import Footer from "@/ui/Footer";
 import MetaProvider from "@/contexts/MetaContext";
+import { ReactLenis } from "@/utils/lenis";
 
 const nunito = Nunito({
   subsets: ["latin"], // or ["latin-ext"] if needed
@@ -24,14 +25,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${nunito.variable} antialiased bg-black relative`}>
-        <QueryProvider>
-          <MetaProvider>
-            <>
-              {children}
-              <Footer />
-            </>
-          </MetaProvider>
-        </QueryProvider>
+        <ReactLenis root>
+          <QueryProvider>
+            <MetaProvider>
+              <>
+                {children}
+                <Footer />
+              </>
+            </MetaProvider>
+          </QueryProvider>
+        </ReactLenis>
       </body>
     </html>
   );
