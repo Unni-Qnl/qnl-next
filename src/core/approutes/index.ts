@@ -19,4 +19,5 @@ export const appRoutes = {
   openroles: "/career/open-roles",
   joinus: "/join-us",
   applynow: "/career/apply-now",
+  caseStudy: "/case-study",
 };

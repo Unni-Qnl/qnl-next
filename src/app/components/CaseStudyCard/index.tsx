@@ -1,3 +1,8 @@
+"use client";
+
+import { appRoutes } from "@/core/approutes";
+import { useRouter } from "next/navigation";
+
 type Props = {
   heading: string;
   image: string;
@@ -5,10 +10,10 @@ type Props = {
 };
 
 export default function CaseStudyCard({ image, heading, slug }: Props) {
-  // const { navigateTo } = useCustomNavigation();
+  const router = useRouter();
   return (
     <div
-      // onClick={() => navigateTo(`${appRoutes.caseStudy}/${slug}`)}
+      onClick={() => router.push(`${appRoutes.caseStudy}/${slug}`)}
       className="cursor-pointer md:w-[8.9rem] lg:w-[11.867rem] xl:w-[14.833rem] 2xl:w-[17.8rem] 3xl:w-[22.25rem]"
     >
       <div className="h-[13.759rem] md:h-[13.275rem] lg:h-[17.7rem] xl:h-[22.125rem] 2xl:h-[26.55rem] 3xl:h-[33.188rem] relative group overflow-hidden">

@@ -1,4 +1,8 @@
+"use client";
+
 import { CarouselItem } from "@/components/ui/carousel";
+import { appRoutes } from "@/core/approutes";
+import { useRouter } from "next/navigation";
 
 type Props = {
   slug: string;
@@ -13,12 +17,12 @@ export default function InsightCard({
   short_description,
   slug,
 }: Props) {
-  // const { navigateTo } = useCustomNavigation();
+  const router = useRouter();
   return (
     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
       <div
         className="cursor-pointer"
-        // onClick={() => navigateTo(`${appRoutes.insights}/${slug}`)}
+        onClick={() => router.push(`${appRoutes.insights}/${slug}`)}
       >
         <p className="font-semibold text-[0.75rem] md:text-[0.75rem] lg:text-[1rem] xl:text-[1.25rem] 2xl:text-[1.5rem] 3xl:text-[1.875rem]">
           {heading}
