@@ -5,10 +5,13 @@ import TrustedPartners from "./components/TrustedPartners";
 import DigitalSolutions from "./components/DigitalSolutions";
 import DesignedForScale from "./components/DesignedForScale";
 import PartnerWithQNLHarmony from "./components/PartnerWithQNLHarmony";
+import { Metadata } from "next";
 
-type Props = {};
+export const metadata: Metadata = {
+  title: "Harmony",
+};
 
-export default function Harmony({}: Props) {
+export default function Harmony() {
   return (
     <section>
       <HarmonyBanner />

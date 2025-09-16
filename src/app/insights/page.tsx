@@ -9,8 +9,13 @@ import bluredInsightsBanner from "@/assets/insights/blured-insights-banner.png";
 import InsightsCard from "./components/InsightsCard";
 import { TInsight } from "./insights.types";
 import StayConnectedWithUs from "@/ui/StayConnectedWithUs";
+import { Metadata } from "next";
 
 type Props = {};
+
+export const metadata: Metadata = {
+  title: "Insights",
+};
 
 export default function Insights({}: Props) {
   const { isVisible, ref } = useLazyBackground<HTMLDivElement>();

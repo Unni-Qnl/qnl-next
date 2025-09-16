@@ -1,7 +1,3 @@
-"use client";
-
-import { useMeta } from "@/contexts/MetaContext";
-import React from "react";
 import CsrAndSustainabilityBanner from "./components/CsrAndSustainabilityBanner";
 import OurCommitmentToSustainability from "./components/OurCommitmentToSustainability";
 import OurSustainabilityPhilosophy from "./components/OurSustainabilityPhilosophy";
@@ -9,22 +5,17 @@ import OurActionsAndInitiatives from "./components/OurActionsAndInitiatives";
 import SustainabilityAccountabilityBlock from "./components/SustainabilityAccountabilityBlock";
 import CollaborationsForChange from "./components/CollaborationsForChange";
 import StayConnectedWithUs from "@/ui/StayConnectedWithUs";
+import { Metadata } from "next";
 
 type Props = {};
 
+export const metadata: Metadata = {
+  title: "Csr And Sustainability",
+};
+
 export default function CsrAndSustainability({}: Props) {
-  const { value: metaData } = useMeta();
   return (
     <section>
-      {/* <title>Csr And Sustainability</title>
-      <meta
-        name="keywords"
-        content={metaData?.csr_and_sustainability?.keywords}
-      />
-      <link
-        rel="canonical"
-        href="https://qnlsoftware.com/CSR-&-Sustainability"
-      /> */}
       <CsrAndSustainabilityBanner />
       <OurCommitmentToSustainability />
       <OurSustainabilityPhilosophy />

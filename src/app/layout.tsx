@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   },
   description:
     "QNL Software delivers innovative IT solutions, including Custom Software, AI/ML, and Staff Augmentation for global clients.",
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({

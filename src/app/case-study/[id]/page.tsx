@@ -1,46 +1,57 @@
-"use client";
-
-import React, { use } from "react";
 import CaseStudyDetailsBanner from "./components/CaseStudyDetailsBanner";
 import CaseStudyContent from "./components/CaseStudyContent";
 import StayConnectedWithUs from "@/ui/StayConnectedWithUs";
-import { useQuery } from "@tanstack/react-query";
 import { DetailApiResponse } from "@/types/global.type";
 import axios from "axios";
 import { APP_API_ROUTES } from "@/apis/api-routes";
+import { Metadata } from "next";
 
 type Props = {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 };
 
-export default function CaseStudyDetails({ params }: Props) {
-  const { id } = use(params);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = params;
+  const res = (
+    await axios.get<DetailApiResponse<any>>(APP_API_ROUTES.caseStudy, {
+      params: { slug: id },
+    })
+  ).data.data;
 
-  const { data } = useQuery({
-    queryKey: ["CASE_STUDY_DETAILS", id],
-    queryFn: async () => {
-      try {
-        const response = (
-          await axios<DetailApiResponse<any>>(`${APP_API_ROUTES.caseStudy}`, {
-            params: {
-              slug: id,
-            },
-          })
-        ).data;
-        if (response?.data && response?.status) {
-          return response?.data;
-        }
-      } catch (error) {
-        console.error(error);
-      }
+  return {
+    title: res?.heading,
+    description: res?.short_description,
+    openGraph: {
+      title: res?.heading,
+      description: res?.short_description,
+      url: `https://qnlsoftware.com/case-study/${id}`,
+      type: "website",
+      images: [{ url: res?.image }],
     },
-  });
+    twitter: {
+      title: res?.heading,
+      description: res?.short_description,
+      images: [{ url: res?.image }],
+    },
+  };
+}
+
+export default async function CaseStudyDetails({ params }: Props) {
+  const { id } = params;
+
+  const res = await axios.get<DetailApiResponse<any>>(
+    APP_API_ROUTES.caseStudy,
+    {
+      params: { slug: id },
+    },
+  );
+  const data = res.data?.data ?? null;
 
   return (
-    <div>
+    <>
       <CaseStudyDetailsBanner data={data} />
       <CaseStudyContent data={data} />
       <StayConnectedWithUs />
-    </div>
+    </>
   );
 }
