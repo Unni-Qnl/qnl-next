@@ -67,7 +67,7 @@ export default function ChatBoat({}: Props) {
     let retryCount = 0;
 
     const connect = () => {
-      socket = new WebSocket(SOCKET_URL);
+      socket = new WebSocket(String(SOCKET_URL));
       socketRef.current = socket;
 
       socket.onopen = () => {

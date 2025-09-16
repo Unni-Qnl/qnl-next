@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import QueryProvider from "@/providers/QueryProvider";
-import Footer from "@/ui/Footer";
 import MetaProvider from "@/contexts/MetaContext";
 import { ReactLenis } from "@/utils/lenis";
+import AppLayout from "@/layout";
+import { Toaster } from "@/components/ui/sonner";
 
 const nunito = Nunito({
   subsets: ["latin"], // or ["latin-ext"] if needed
@@ -24,14 +25,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover,  interactive-widget=resizes-content"
+      />
       <body className={`${nunito.variable} antialiased bg-black relative`}>
         <ReactLenis root>
           <QueryProvider>
+            <Toaster position="top-center" />
             <MetaProvider>
-              <>
-                {children}
-                <Footer />
-              </>
+              <AppLayout>{children}</AppLayout>
             </MetaProvider>
           </QueryProvider>
         </ReactLenis>
