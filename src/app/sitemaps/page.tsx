@@ -1,3 +1,5 @@
+"use client";
+
 import SitemapBanner from "./components/SitemapBanner";
 import SitemapListing from "./components/SitemapListing";
 

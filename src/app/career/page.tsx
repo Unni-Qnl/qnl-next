@@ -1,5 +1,3 @@
-"use client";
-
 import CareerBanner from "./components/CareerBanner";
 import WhyJoinQnl from "./components/WhyJoinQnl";
 import InsideQnl from "./components/InsideQnl";
