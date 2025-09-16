@@ -1,24 +1,30 @@
-import { useLazyBackground } from "@/core/hooks/useLazyBackground";
+"use client";
+
 import { TInsight } from "../../insights.types";
 import { useRouter } from "next/navigation";
+import { appRoutes } from "@/core/approutes";
+import Image from "next/image";
 
 type Props = {
   data: TInsight;
 };
 
 export default function InsightsCard({ data }: Props) {
-  const { isVisible, ref } = useLazyBackground<HTMLImageElement>();
   const router = useRouter();
 
   return (
-    <div className="cursor-pointer" onClick={() => router.push(data?.slug)}>
+    <div
+      className="cursor-pointer"
+      onClick={() => router.push(`${appRoutes.insights}/${data?.slug}`)}
+    >
       <div className="relative h-[8.375rem] md:h-[13.275rem] lg:h-[17.7rem] xl:h-[22.125rem] 2xl:h-[26.55rem] 3xl:h-[33.188rem]">
-        <img
-          ref={ref}
-          className="w-full h-full object-cover"
-          src={isVisible ? data?.image : data?.blur_image}
+        <Image
           alt={data?.heading}
+          className="w-full h-full object-cover"
+          src={data?.image}
+          blurDataURL={data?.blur_image}
           loading="lazy"
+          fill
         />
         <div
           style={{

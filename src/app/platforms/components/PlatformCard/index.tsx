@@ -1,3 +1,5 @@
+"use client";
+
 import { openInNewTab } from "@/utils";
 import { TPlatform } from "../../page";
 

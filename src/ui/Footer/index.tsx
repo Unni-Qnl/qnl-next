@@ -41,7 +41,7 @@ const FOOTER_ROUTES = [
   },
   {
     id: 5,
-    label: "Sitemap",
+    label: "Sitemaps",
     route: appRoutes.sitemap,
   },
   {
