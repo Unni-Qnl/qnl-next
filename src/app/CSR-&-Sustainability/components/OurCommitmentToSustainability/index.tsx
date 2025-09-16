@@ -1,3 +1,5 @@
+"use client";
+
 export default function OurCommitmentToSustainability() {
   return (
     <div className="container isolate py-8 md:py-[2.5rem] lg:py-[3.333rem] xl:py-[4.167rem] 2xl:py-[5rem] 3xl:py-[6.25rem]">

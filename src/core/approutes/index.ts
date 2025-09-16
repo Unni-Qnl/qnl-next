@@ -20,4 +20,5 @@ export const appRoutes = {
   joinus: "/join-us",
   applynow: "/career/apply-now",
   caseStudy: "/case-study",
+  learnMore: "/learn-more",
 };

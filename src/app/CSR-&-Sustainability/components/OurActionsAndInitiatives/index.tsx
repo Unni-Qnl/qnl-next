@@ -1,3 +1,5 @@
+"use client";
+
 import InitiativeCard from "../InitiativeCard";
 
 const initiativeData = [

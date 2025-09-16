@@ -1,3 +1,5 @@
+"use client";
+
 import impactImg from "@/assets/csrandsustainability/impact.webp";
 import blurediImpactImg from "@/assets/csrandsustainability/blured-impact.webp";
 import devGoals from "@/assets/csrandsustainability/deve-goals.webp";

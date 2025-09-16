@@ -1,20 +1,22 @@
 "use client";
 
-import banner from "@/assets/csrandsustainability/sustainability-banner.webp";
-import bluredBanner from "@/assets/csrandsustainability/blured-sustainability-banner.png";
 import { useLazyBackground } from "@/core/hooks/useLazyBackground";
+import bannerImage from "@/assets/learnmore/build-beyond-banner.webp";
+import bluredBannerImage from "@/assets/learnmore/blured-build-beyond-banner.png";
 import Navbar from "@/core/components/Navbar";
 import Breadcrumb from "@/ui/Breadcrumb";
 
-export default function CsrAndSustainabilityBanner() {
+type Props = {};
+
+export default function LearnMoreBanner({}: Props) {
   const { isVisible, ref } = useLazyBackground<HTMLDivElement>();
   return (
     <div
       ref={ref}
       style={{
         backgroundImage: isVisible
-          ? `url(${banner.src})`
-          : `url(${bluredBanner.src})`,
+          ? `url(${bannerImage.src})`
+          : `url(${bluredBannerImage.src})`,
       }}
       className="md:h-[27rem] lg:h-[36rem] xl:h-[45rem] 2xl:h-[54rem] 3xl:h-[67.5rem] bg-cover bg-no-repeat w-full bg-center relative"
     >
@@ -25,11 +27,12 @@ export default function CsrAndSustainabilityBanner() {
             <Breadcrumb />
             <div className="mt-4 md:w-[25.7rem] lg:w-[34.266rem] xl:w-[42.833rem] 2xl:w-[51.4rem] 3xl:w-[64.25rem]">
               <h1 className="text-[1.5rem] md:text-[2.25rem] lg:text-[3rem] xl:text-[3.75rem] 2xl:text-[4.5rem] 3xl:text-[5.625rem] leading-snug">
-                For today, for tomorrow, for all.
+                Build Beyond
               </h1>
-              <h1 className="font-light text-primary text-[1.5rem] md:text-[2.25rem] lg:text-[3rem] xl:text-[3.75rem] 2xl:text-[4.5rem] 3xl:text-[5.625rem] leading-snug">
-                Our responsibility goes beyond technology.
-              </h1>
+              <p className="font-normal text-[0.75rem] md:text-[0.7rem] lg:text-[0.933rem] xl:text-[1.166rem] 2xl:text-[1.4rem] 3xl:text-[1.75rem] mt-2 md:mt-[0.8rem] lg:mt-[1.066rem] xl:mt-[1.333rem] 2xl:mt-[1.6rem] 3xl:mt-[2rem]">
+                Welcome to Build Beyond — a content space where we share the
+                thinking that drives our work at QNL Software.
+              </p>
             </div>
           </div>
         </div>

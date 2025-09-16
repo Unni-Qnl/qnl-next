@@ -4,17 +4,15 @@ import { useEffect, useState } from "react";
 import ServiceAccordion from "../ServiceAccordion";
 import AnimatedServicesCard from "../AnimatedServicesCard";
 import { TService } from "@/types/modules.types";
-
-type Props = {
-  data: TService[];
-};
+import useServices from "@/hooks/useServices";
 
 type TActiveService = {
   index: number;
   data: TService;
 };
-export default function OurServices({ data }: Props) {
+export default function OurServices() {
   const [activeService, setActiveService] = useState<TActiveService>();
+  const { data } = useServices();
 
   useEffect(() => {
     if (Array.isArray(data) && data.length > 0) {

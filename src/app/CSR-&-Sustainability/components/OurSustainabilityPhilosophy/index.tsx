@@ -1,3 +1,5 @@
+"use client";
+
 import people from "@/assets/csrandsustainability/people.svg";
 import planet from "@/assets/csrandsustainability/planet.svg";
 import purpose from "@/assets/csrandsustainability/purpose.svg";

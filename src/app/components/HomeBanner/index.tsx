@@ -1,11 +1,16 @@
+"use client";
+
 import Button from "@/core/components/Button";
 import Navbar from "@/core/components/Navbar";
 import bannerGiff from "@/assets/home/background-giff.gif";
 import ChatBoat from "../ChatBoat";
+import { useRouter } from "next/navigation";
+import { appRoutes } from "@/core/approutes";
 
 type Props = {};
 
 export default function HomeBanner({}: Props) {
+  const router = useRouter();
   return (
     <>
       <Navbar />
@@ -30,7 +35,7 @@ export default function HomeBanner({}: Props) {
                   We build possibilities. We build impact. We build beyond.
                 </p>
                 <Button
-                  // onClick={() => navigateTo(appRoutes.learnMore)}
+                  onClick={() => router.push(appRoutes.learnMore)}
                   className="mt-4 md:mt-[0.8rem] lg:mt-[1.067rem] xl:mt-[1.333rem] 2xl:mt-[1.6rem] 3xl:mt-[2rem]"
                 >
                   Learn More
