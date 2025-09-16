@@ -14,7 +14,7 @@ export const appRoutes = {
   termsandconditions: "/terms-&-conditions",
   cookiepolicy: "/cookie-policy",
   locations: "/locations",
-  sitemap: "/sitemap",
+  sitemap: "/sitemaps",
   csrandsustainability: "CSR-&-Sustainability",
   openroles: "/career/open-roles",
   joinus: "/join-us",

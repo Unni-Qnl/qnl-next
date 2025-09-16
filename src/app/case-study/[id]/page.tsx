@@ -45,6 +45,7 @@ export default async function CaseStudyDetails({ params }: Props) {
       params: { slug: id },
     },
   );
+
   const data = res.data?.data ?? null;
 
   return (

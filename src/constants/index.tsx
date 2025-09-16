@@ -2,6 +2,7 @@ export const COMMON_API_URL = process.env.NEXT_PUBLIC_COMMON_API_URL;
 export const HR_API_URL = process.env.NEXT_PUBLIC_HR_API_URL;
 export const LEAD_API_URL = process.env.NEXT_PUBLIC_LEAD_API_URL;
 export const SOCKET_URL = process.env.NEXT_PUBLIC_SOCKET_URL;
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const qnl_video =
   "https://d1lm6l9777hb7b.cloudfront.net/Videos/qnl_video.mp4";
