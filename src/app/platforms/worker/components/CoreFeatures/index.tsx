@@ -38,28 +38,28 @@ const datas = [
 
 export default function CoreFeatures() {
   return (
-    <div className="bg-white md:py-[0.8rem] lg:py-[1.067rem] xl:py-[1.333rem] 2xl:py-[1.6rem] 3xl:py-[2rem] md:px-[1.6rem] lg:px-[2.133rem] xl:px-[2.667rem] 2xl:px-[3.2rem] 3xl:px-[4rem] bg-[linear-gradient(180deg,#FFFFFF_0%,#CACACA_48.82%,#000000_100%)]">
-      <h3 className="text-[#3A3541] text-center md:text-[1.8rem] lg:text-[2.4rem] xl:text-[3rem] 2xl:text-[3.6rem] 3xl:text-[4.5rem]">
+    <div className="bg-white py-2 md:py-[0.8rem] lg:py-[1.067rem] xl:py-[1.333rem] 2xl:py-[1.6rem] 3xl:py-[2rem] px-3.5 md:px-[1.6rem] lg:px-[2.133rem] xl:px-[2.667rem] 2xl:px-[3.2rem] 3xl:px-[4rem] bg-[linear-gradient(180deg,#FFFFFF_0%,#CACACA_48.82%,#000000_100%)]">
+      <h3 className="text-[#3A3541] text-center text-2xl md:text-[1.8rem] lg:text-[2.4rem] xl:text-[3rem] 2xl:text-[3.6rem] 3xl:text-[4.5rem]">
         Core Features
       </h3>
-      <div className="grid grid-cols-2 md:gap-[0.6rem] lg:gap-[0.8rem] xl:gap-[1rem] 2xl:gap-[1.2rem] 3xl:gap-[1.5rem] md:mt-[0.6rem] lg:mt-[0.8rem] xl:mt-[1rem] 2xl:mt-[1.2rem] 3xl:mt-[1.5rem]">
+      <div className="grid md:grid-cols-2 gap-2 md:gap-[0.6rem] lg:gap-[0.8rem] xl:gap-[1rem] 2xl:gap-[1.2rem] 3xl:gap-[1.5rem] mt-1.5 md:mt-[0.6rem] lg:mt-[0.8rem] xl:mt-[1rem] 2xl:mt-[1.2rem] 3xl:mt-[1.5rem]">
         {datas?.map((data) => (
           <div
             key={data?.id}
-            className="md:h-[18.1rem] lg:h-[24.133rem] xl:h-[30.167rem] 2xl:h-[36.2rem] 3xl:h-[45.25rem] bg-[#FBFBFB] md:p-[0.4rem] lg:p-[0.533rem] xl:p-[0.667rem] 2xl:p-[0.8rem] 3xl:p-[1rem]"
+            className="overflow-hidden h-[195px] md:h-[18.1rem] lg:h-[24.133rem] xl:h-[30.167rem] 2xl:h-[36.2rem] 3xl:h-[45.25rem] bg-[#FBFBFB] p-2 md:p-[0.4rem] lg:p-[0.533rem] xl:p-[0.667rem] 2xl:p-[0.8rem] 3xl:p-[1rem]"
           >
             <div>
               <Image
-                className="md:h-[13.25rem] lg:h-[17.667rem] xl:h-[22.083rem] 2xl:h-[26.5rem] 3xl:h-[33.125rem]"
+                className="h-[118px] md:h-[13.25rem] lg:h-[17.667rem] xl:h-[22.083rem] 2xl:h-[26.5rem] 3xl:h-[33.125rem] object-cover"
                 src={data?.img}
                 alt={data?.title}
               />
             </div>
-            <div className="text-black md:mt-[0.4rem] lg:mt-[0.533rem] xl:mt-[0.667rem] 2xl:mt-[0.8rem] 3xl:mt-[1rem]">
-              <p className="font-semibold md:text-[0.8rem] lg:text-[1.067rem] xl:text-[1.333rem] 2xl:text-[1.6rem] 3xl:text-[2rem]">
+            <div className="text-black mt-1 md:mt-[0.4rem] lg:mt-[0.533rem] xl:mt-[0.667rem] 2xl:mt-[0.8rem] 3xl:mt-[1rem]">
+              <p className="font-semibold text-sm md:text-[0.8rem] lg:text-[1.067rem] xl:text-[1.333rem] 2xl:text-[1.6rem] 3xl:text-[2rem]">
                 {data?.title}
               </p>
-              <p className="md:text-[0.7rem] lg:text-[0.933rem] xl:text-[1.167rem] 2xl:text-[1.4rem] 3xl:text-[1.75rem] md:mt-[0.35rem] lg:mt-[0.467rem] xl:mt-[0.583rem] 2xl:mt-[0.7rem] 3xl:mt-[0.875rem]">
+              <p className="text-xs  md:text-[0.7rem] lg:text-[0.933rem] xl:text-[1.167rem] 2xl:text-[1.4rem] 3xl:text-[1.75rem] mt-1.5 md:mt-[0.35rem] lg:mt-[0.467rem] xl:mt-[0.583rem] 2xl:mt-[0.7rem] 3xl:mt-[0.875rem]">
                 {data?.description}
               </p>
             </div>

@@ -6,6 +6,7 @@ import WorkerHeader from "./components/WorkerHeader";
 import CoreFeatures from "./components/CoreFeatures";
 import EmployeeExperience from "./components/EmployeeExperience";
 import PerfectForStartups from "./components/PerfectForStartups";
+import WorkerFooter from "./components/WorkerFooter";
 
 type Props = {};
 
@@ -17,6 +18,7 @@ export default function Worker({}: Props) {
       <CoreFeatures />
       <EmployeeExperience />
       <PerfectForStartups />
+      <WorkerFooter />
     </>
   );
 }

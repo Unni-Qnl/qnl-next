@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/core/components/Button";
 import startUpImage1 from "@/assets/platforms/start-up1.svg";
 import startUpImage2 from "@/assets/platforms/start-up2.svg";

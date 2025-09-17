@@ -1,3 +1,5 @@
+"use client";
+
 import img from "@/assets/platforms/user-exp.webp";
 import Image from "next/image";
 

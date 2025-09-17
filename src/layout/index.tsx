@@ -5,13 +5,18 @@ import Footer from "@/ui/Footer";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import { usePathname } from "next/navigation";
 
 type Props = {
   children: React.ReactNode;
 };
 
+const footerRestrictedPaths = ["/platforms/worker"];
+
 export default function AppLayout({ children }: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const pathname = usePathname();
 
   useEffect(() => {
     const consent = Cookies.get("cookieConsent");
@@ -38,16 +43,11 @@ export default function AppLayout({ children }: Props) {
 
   const handleCloseCookieConsent = () => setIsOpen(false);
 
+  console.log(pathname);
+
   return (
     <div className="relative">
       {children}
-      {/* <div className="fixed z-50 bg-white inset-0 flex items-end">
-        <CookieConsent
-          handleAccept={handleAccept}
-          handleReject={handleReject}
-          handleCloseCookieConsent={handleCloseCookieConsent}
-        />
-      </div> */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -65,7 +65,7 @@ export default function AppLayout({ children }: Props) {
           </motion.div>
         )}
       </AnimatePresence>
-      <Footer />
+      {!footerRestrictedPaths.includes(pathname) && <Footer />}
     </div>
   );
 }
