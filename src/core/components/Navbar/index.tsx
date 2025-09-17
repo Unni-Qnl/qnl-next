@@ -43,7 +43,7 @@ export default function Navbar({}: Props) {
     <>
       <nav className="relative flex z-100 items-center justify-between bg-black/10 backdrop-blur-[4px] px-4 md:px-[2.5rem] lg:px-[3.333rem] xl:px-[4.1666rem] 2xl:px-[5rem] 3xl:px-[6.25rem] pt-[2.188rem] md:pt-[2.5rem] lg:pt-[3.333rem] xl:pt-[4.1666rem] 2xl:pt-[5rem] 3xl:pt-[6.25rem] pb-[1.188rem] md:pb-[0.875rem] lg:pb-[1.166rem] xl:pb-[1.458rem] 2xl:pb-[1.75rem] 3xl:pb-[2.187rem]">
         <div className="w-[4.094rem] md:w-[2.183rem] lg:w-[2.911rem] xl:w-[3.638rem] 2xl:w-[4.366rem] 3xl:w-[5.458rem] h-[1.125rem] md:h-[0.6rem] lg:h-[0.8rem] xl:h-[1rem] 2xl:h-[1.2rem] 3xl:h-[1.5rem]">
-          <Link id="home-route" href={appRoutes.home}>
+          <Link id="home-route" href={appRoutes.home} prefetch>
             <img loading="lazy" title="qnl" src="/app-logo.svg" alt="qnl" />
           </Link>
         </div>
@@ -65,7 +65,9 @@ export default function Navbar({}: Props) {
                   key={link?.id}
                   className="md:text-[0.5rem] lg:text-[0.666rem] xl:text-[0.833rem] 2xl:text-[1rem] 3xl:text-[1.25rem] text-white font-light"
                 >
-                  <Link href={link?.route}>{link?.label}</Link>
+                  <Link href={link?.route} prefetch>
+                    {link?.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -87,7 +89,9 @@ export default function Navbar({}: Props) {
                     key={item?.id}
                     className="cursor-pointer border-b-2 border-b-primary py-6 text-[1.25rem]"
                   >
-                    <Link href={item?.route}>{item?.label}</Link>
+                    <Link href={item?.route} prefetch>
+                      {item?.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
