@@ -26,7 +26,7 @@ export default function CookieConsent({
   };
   return (
     <>
-      <div className="bg-black p-6 md:p-[1.2rem] lg:p-[1.6rem] xl:p-[2rem] 2xl:p-[2.4rem] 3xl:p-[3rem]">
+      <div className="bg-white p-6 md:p-[1.2rem] lg:p-[1.6rem] xl:p-[2rem] 2xl:p-[2.4rem] 3xl:p-[3rem] text-black">
         <h4 className="text-[24px] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3rem] 3xl:text-[3.75rem]">
           We use cookies to give you the best possible experience on our website
         </h4>
@@ -63,7 +63,7 @@ export default function CookieConsent({
             </button>
             <button
               onClick={handleAccept}
-              className="font-semibold cursor-pointer border-2 border-primary bg-primary p-2 md:p-[0.4rem] lg:p-[0.533rem] xl:p-[0.667rem] 2xl:p-[0.8rem] 3xl:p-[1rem] text-[12px] md:text-[0.6rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1.2rem] 3xl:text-[1.5rem]"
+              className="text-white font-semibold cursor-pointer border-2 border-primary bg-primary p-2 md:p-[0.4rem] lg:p-[0.533rem] xl:p-[0.667rem] 2xl:p-[0.8rem] 3xl:p-[1rem] text-[12px] md:text-[0.6rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1.2rem] 3xl:text-[1.5rem]"
             >
               Accept all cookies
             </button>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import QueryProvider from "@/providers/QueryProvider";
-import MetaProvider from "@/contexts/MetaContext";
 import { ReactLenis } from "@/utils/lenis";
 import AppLayout from "@/layout";
 import { Toaster } from "@/components/ui/sonner";

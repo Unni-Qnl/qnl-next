@@ -41,6 +41,13 @@ export default function AppLayout({ children }: Props) {
   return (
     <div className="relative">
       {children}
+      {/* <div className="fixed z-50 bg-white inset-0 flex items-end">
+        <CookieConsent
+          handleAccept={handleAccept}
+          handleReject={handleReject}
+          handleCloseCookieConsent={handleCloseCookieConsent}
+        />
+      </div> */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -48,7 +55,7 @@ export default function AppLayout({ children }: Props) {
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ type: "tween", duration: 0.4 }}
-            className="fixed z-[99] h-screen flex items-end"
+            className="fixed z-[99] inset-0 flex items-end"
           >
             <CookieConsent
               handleAccept={handleAccept}
