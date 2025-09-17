@@ -5,36 +5,46 @@ import CareerPathAndLearning from "./components/CareerPathAndLearning";
 import BuildingFuture from "./components/BuildingFuture";
 import PartOfOurCommunity from "./components/PartOfOurCommunity";
 import { Metadata } from "next";
+import { COMMON_API_URL } from "@/constants";
 
 type Props = {};
 
-export const metadata: Metadata = {
-  title: "Careers",
-  description:
-    "Explore tech careers at QNL Software. Shape the digital future with us through exciting roles in development, AI, and cloud services.",
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  const url = new URL(`${COMMON_API_URL}seo/web/listing`);
+  url.searchParams.set("module", "career");
+
+  const response = await fetch(url.toString());
+  const data = await response.json();
+
+  return {
     title: "Careers",
     description:
       "Explore tech careers at QNL Software. Shape the digital future with us through exciting roles in development, AI, and cloud services.",
-    images: [
-      {
-        url: "https://qnlpublic.s3.ap-south-1.amazonaws.com/White++in+Black+(1200x630).png",
-      },
-    ],
-    url: "https://qnlsoftware.com/career",
-    type: "website",
-  },
-  twitter: {
-    title: "Careers",
-    description:
-      "Explore tech careers at QNL Software. Shape the digital future with us through exciting roles in development, AI, and cloud services.",
-    images: [
-      {
-        url: "https://qnlpublic.s3.ap-south-1.amazonaws.com/White++in+Black+(1200x630).png",
-      },
-    ],
-  },
-};
+    openGraph: {
+      title: "Careers",
+      description:
+        "Explore tech careers at QNL Software. Shape the digital future with us through exciting roles in development, AI, and cloud services.",
+      images: [
+        {
+          url: "https://qnlpublic.s3.ap-south-1.amazonaws.com/White++in+Black+(1200x630).png",
+        },
+      ],
+      url: "https://qnlsoftware.com/career",
+      type: "website",
+    },
+    twitter: {
+      title: "Careers",
+      description:
+        "Explore tech careers at QNL Software. Shape the digital future with us through exciting roles in development, AI, and cloud services.",
+      images: [
+        {
+          url: "https://qnlpublic.s3.ap-south-1.amazonaws.com/White++in+Black+(1200x630).png",
+        },
+      ],
+    },
+    keywords: data?.data?.seo_keywords?.split(),
+  };
+}
 
 export default function Career({}: Props) {
   return (

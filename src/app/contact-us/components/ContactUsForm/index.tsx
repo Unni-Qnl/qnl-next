@@ -33,7 +33,6 @@ import { useRouter } from "next/navigation";
 import { appRoutes } from "@/core/approutes";
 import FormLabel from "@/ui/FormLabel";
 import FileInput from "@/ui/FileInput";
-import { useMeta } from "@/contexts/MetaContext";
 
 type Props = {};
 
@@ -71,8 +70,6 @@ const formSchema = z.object({
 });
 
 export default function ContactUsForm({}: Props) {
-  const { value: metaData } = useMeta();
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {

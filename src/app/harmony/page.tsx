@@ -6,10 +6,20 @@ import DigitalSolutions from "./components/DigitalSolutions";
 import DesignedForScale from "./components/DesignedForScale";
 import PartnerWithQNLHarmony from "./components/PartnerWithQNLHarmony";
 import { Metadata } from "next";
+import { COMMON_API_URL } from "@/constants";
 
-export const metadata: Metadata = {
-  title: "Harmony",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const url = new URL(`${COMMON_API_URL}seo/web/listing`);
+  url.searchParams.set("module", "harmony");
+
+  const response = await fetch(url.toString());
+  const data = await response.json();
+
+  return {
+    title: "Harmony",
+    keywords: data?.data?.seo_keywords?.split(),
+  };
+}
 
 export default function Harmony() {
   return (

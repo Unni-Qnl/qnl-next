@@ -5,6 +5,24 @@ import HomeBanner from "./components/HomeBanner";
 import VissionAndMission from "./components/VissionAndMission";
 import NewsLetter from "./components/NewsLetter";
 import StayConnectedWithUs from "@/ui/StayConnectedWithUs";
+import { Metadata } from "next";
+import { COMMON_API_URL } from "@/constants";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const url = new URL(`${COMMON_API_URL}seo/web/listing`);
+  url.searchParams.set("module", "home");
+
+  const response = await fetch(url.toString());
+  const data = await response.json();
+
+  return {
+    title:
+      "QNL Software – IT Services | Custom Development | Digital Solutions",
+    description:
+      "QNL Software delivers innovative IT solutions, including Custom Software, AI/ML, and Staff Augmentation for global clients.",
+    keywords: data?.data?.seo_keywords?.split(),
+  };
+}
 
 export default function Home() {
   return (

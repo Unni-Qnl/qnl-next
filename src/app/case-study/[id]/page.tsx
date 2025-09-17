@@ -12,6 +12,9 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = params;
+  const qs = new URLSearchParams({
+    slug: id,
+  });
   const res = (
     await axios.get<DetailApiResponse<any>>(APP_API_ROUTES.caseStudy, {
       params: { slug: id },

@@ -6,12 +6,22 @@ import SustainabilityAccountabilityBlock from "./components/SustainabilityAccoun
 import CollaborationsForChange from "./components/CollaborationsForChange";
 import StayConnectedWithUs from "@/ui/StayConnectedWithUs";
 import { Metadata } from "next";
+import { COMMON_API_URL } from "@/constants";
 
 type Props = {};
 
-export const metadata: Metadata = {
-  title: "Csr And Sustainability",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const url = new URL(`${COMMON_API_URL}seo/web/listing`);
+  url.searchParams.set("module", "csr_and_sustainability");
+
+  const response = await fetch(url.toString());
+  const data = await response.json();
+
+  return {
+    title: "Csr And Sustainability",
+    keywords: data?.data?.seo_keywords?.split(),
+  };
+}
 
 export default function CsrAndSustainability({}: Props) {
   return (

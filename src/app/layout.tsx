@@ -37,13 +37,11 @@ export default function RootLayout({
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover,  interactive-widget=resizes-content"
       />
-      <body className={`${nunito.variable} antialiased bg-black relative`}>
+      <body className={`${nunito.variable} bg-black relative`}>
         <ReactLenis root>
           <QueryProvider>
             <Toaster position="top-center" />
-            <MetaProvider>
-              <AppLayout>{children}</AppLayout>
-            </MetaProvider>
+            <AppLayout>{children}</AppLayout>
           </QueryProvider>
         </ReactLenis>
       </body>

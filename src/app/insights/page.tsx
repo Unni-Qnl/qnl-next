@@ -6,12 +6,22 @@ import InsightsBanner from "./components/InsightsBanner";
 import { APP_API_ROUTES } from "@/apis/api-routes";
 import { ApiResponse } from "@/types/global.type";
 import axios from "axios";
+import { COMMON_API_URL } from "@/constants";
 
 type Props = {};
 
-export const metadata: Metadata = {
-  title: "Insights",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const url = new URL(`${COMMON_API_URL}seo/web/listing`);
+  url.searchParams.set("module", "insight");
+
+  const response = await fetch(url.toString());
+  const data = await response.json();
+
+  return {
+    title: "Insights",
+    keywords: data?.data?.seo_keywords?.split(),
+  };
+}
 
 export default async function Insights({}: Props) {
   const response = (
