@@ -53,6 +53,7 @@ export default function CoreFeatures() {
                 className="h-[118px] md:h-[13.25rem] lg:h-[17.667rem] xl:h-[22.083rem] 2xl:h-[26.5rem] 3xl:h-[33.125rem] object-cover"
                 src={data?.img}
                 alt={data?.title}
+                loading="lazy"
               />
             </div>
             <div className="text-black mt-1 md:mt-[0.4rem] lg:mt-[0.533rem] xl:mt-[0.667rem] 2xl:mt-[0.8rem] 3xl:mt-[1rem]">
@@ -65,15 +66,20 @@ export default function CoreFeatures() {
             </div>
           </div>
         ))}
-        <div className="col-span-full flex items-center text-black md:gap-[1.25rem] lg:gap-[1.667rem] xl:gap-[2.083rem] 2xl:gap-[2.5rem] 3xl:gap-[3.125rem] bg-[#FBFBFB] md:p-[0.4rem] lg:p-[0.533rem] xl:p-[0.667rem] 2xl:p-[0.8rem] 3xl:p-[1rem]">
-          <div className="md:w-[25.675rem] lg:w-[34.233rem] xl:w-[42.792rem] 2xl:w-[51.35rem] 3xl:w-[64.188rem]">
-            <Image alt="img5" src={img5} />
+        <div className="col-span-full md:flex items-center text-black md:gap-[1.25rem] lg:gap-[1.667rem] xl:gap-[2.083rem] 2xl:gap-[2.5rem] 3xl:gap-[3.125rem] bg-[#FBFBFB] p-4 md:p-[0.4rem] lg:p-[0.533rem] xl:p-[0.667rem] 2xl:p-[0.8rem] 3xl:p-[1rem]">
+          <div className="overflow-hidden h-[150px] md:h-auto w-full md:w-[25.675rem] lg:w-[34.233rem] xl:w-[42.792rem] 2xl:w-[51.35rem] 3xl:w-[64.188rem]">
+            <Image
+              className="object-cover"
+              alt="img5"
+              src={img5}
+              loading="lazy"
+            />
           </div>
-          <div>
-            <p className="font-semibold md:text-[0.8rem] lg:text-[1.067rem] xl:text-[1.333rem] 2xl:text-[1.6rem] 3xl:text-[2rem]">
+          <div className="mt-2 md:mt-0">
+            <p className="font-semibold text-sm md:text-[0.8rem] lg:text-[1.067rem] xl:text-[1.333rem] 2xl:text-[1.6rem] 3xl:text-[2rem]">
               Organisation Management
             </p>
-            <ul className="list-disc list-inside md:text-[0.7rem] lg:text-[0.933rem] xl:text-[1.167rem] 2xl:text-[1.4rem] 3xl:text-[1.75rem] md:mt-[0.25rem] lg:mt-[0.333rem] xl:mt-[0.417rem] 2xl:mt-[0.5rem] 3xl:mt-[0.625rem]">
+            <ul className="list-disc list-inside text-xs md:text-[0.7rem] lg:text-[0.933rem] xl:text-[1.167rem] 2xl:text-[1.4rem] 3xl:text-[1.75rem] mt-1 md:mt-[0.25rem] lg:mt-[0.333rem] xl:mt-[0.417rem] 2xl:mt-[0.5rem] 3xl:mt-[0.625rem]">
               <li>Departments</li>
               <li>Designations</li>
               <li>Holidays</li>

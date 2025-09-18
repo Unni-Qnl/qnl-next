@@ -2,6 +2,7 @@
 
 import Button from "@/core/components/Button";
 import iworkerImage from "@/assets/platforms/worker.webp";
+import iworkerStroke from "@/assets/platforms/worker-stroker.webp";
 import Image from "next/image";
 
 type Props = {};
@@ -34,10 +35,16 @@ export default function WorkerHeader({}: Props) {
             className="md:w-[20.625rem] lg:w-[27.5rem] xl:w-[34.375rem] 2xl:w-[41.25rem] 3xl:w-[51.563rem] md:h-[15rem] lg:h-[20rem] xl:h-[25rem] 2xl:h-[30rem] 3xl:h-[37.5rem]"
             alt="worker image"
             src={iworkerImage}
+            loading="lazy"
           />
         </div>
       </div>
-      <div className="container grid md:grid-cols-2 md:gap-[2.675rem] lg:gap-[3.567rem] xl:gap-[4.458rem] 2xl:gap-[5.35rem] 3xl:gap-[6.688rem] my-8 md:my-[5.225rem] lg:my-[6.967rem] xl:my-[8.708rem] 2xl:my-[10.45rem] 3xl:my-[13.063rem]">
+      <Image
+        className="hidden md:block absolute top-[300px]"
+        alt="iworkerStroke"
+        src={iworkerStroke}
+      />
+      <div className="container grid md:grid-cols-2 md:gap-[2.675rem] lg:gap-[3.567rem] xl:gap-[4.458rem] 2xl:gap-[5.35rem] 3xl:gap-[6.688rem] pt-8 md:pt-[8.65rem] lg:pt-[11.533rem] xl:pt-[14.417rem] 2xl:pt-[17.3rem] 3xl:pt-[21.625rem] mb-8 md:mb-[5.225rem] lg:mb-[6.967rem] xl:mb-[8.708rem] 2xl:mb-[10.45rem] 3xl:mb-[13.063rem]">
         <div>
           <h2 className="text-2xl md:text-[1.8rem] lg:text-[2.4rem] xl:text-[3rem] 2xl:text-[3.6rem] 3xl:text-[4.5rem]">
             Why Worker?

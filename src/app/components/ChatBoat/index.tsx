@@ -60,6 +60,8 @@ export default function ChatBoat({}: Props) {
    * Cleans up by closing the socket on unmount.
    */
   useEffect(() => {
+    if (typeof window === "undefined") return; // ✅ run only in browser
+
     let socket: WebSocket;
     let reconnectTimer: NodeJS.Timeout;
     const RECONNECT_INTERVAL = 3000; // 3 seconds
